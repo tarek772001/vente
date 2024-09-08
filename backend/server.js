@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import productRoutes from './routes/productRoutes.js';
 
 //ajout tarek
+import path from 'path';
 import cors from 'cors';
 
 
