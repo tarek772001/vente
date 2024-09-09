@@ -16,7 +16,8 @@ import { notFound, errorHandler } from './middleware/errorMiddleware.js'
 
 //import products from './data/products.js';
 
-const port = process.env.PORT || 5000; 
+//modif tarek
+const port = process.env.PORT || 5050; 
 
 connectDB();
 
