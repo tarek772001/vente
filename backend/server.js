@@ -18,6 +18,7 @@ import { notFound, errorHandler } from './middleware/errorMiddleware.js'
 
 //modif tarek
 const port = process.env.PORT || 5050; 
+//const port = process.env.PORT || 5000; 
 
 connectDB();
 
@@ -25,7 +26,7 @@ const app = express();
 
 //ajout tarek
 app.use(express.urlencoded({ extended: true }));
-app.use(cors('http://54.36.189.29'));
+app.use(cors('http://54.36.189.29:3050'));
 
 app.get('/', (req, res) => { 
    res.send('API is running...')
@@ -45,8 +46,9 @@ app.use('/api/products', productRoutes);
 //ajout tarek
 if (process.env.NODE_ENV === 'production') {
    const __dirname = path.resolve();
-   //app.use('/uploads', express.static('/var/data/uploads'));
-   app.use(express.static(path.join(__dirname, '/frontend/build')));
+   //modification tarek
+   app.use('/uploads', express.static('/var/www/vente/build'));
+   //app.use(express.static(path.join(__dirname, '/frontend/build')));
  
    //any route that is not api will be redirected to index.html
    app.get('*', (req, res) =>
